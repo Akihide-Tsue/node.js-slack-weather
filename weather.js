@@ -16,6 +16,7 @@ const fs = require('fs');
     });
     const page = await browser.newPage();
     await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3419.0 Safari/537.36');
+    // await setTimeout(2000)//2秒
     await page.goto('https://weathernews.jp/s/forecast/detail.fcgi?area=Osaka', { waitUntil: "networkidle2" })
 
     const targetElementSelector = '.table-weather01'
@@ -62,12 +63,13 @@ const fs = require('fs');
       });
 
     }).catch(error => {
-      console.log(error);
+      console.log('errorその１',error);
     });
     console.log('完了')
     await setTimeout(20000)//20秒
     browser.close();
   }catch (error) {
-    console.log('error', error )
+    console.log('errorその２', error)
+    return
   }
 })();
