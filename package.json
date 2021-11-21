@@ -1,0 +1,18 @@
+{
+  "main": "weather.js",
+  "scripts": {
+    "start": "node weather.js"
+  },
+  "dependencies": {
+    "@slack/web-api": "^6.4.0",
+    "@slack/webhook": "^6.0.0",
+    "dotenv": "^10.0.0",
+    "fs": "^0.0.1-security",
+    "imagekit": "^3.2.3",
+    "install": "^0.13.0",
+    "npm": "^8.1.3",
+    "promise-timers": "^1.0.1",
+    "puppeteer": "^11.0.0",
+    "timers-promises": "^1.0.1"
+  }
+}
