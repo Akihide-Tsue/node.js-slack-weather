@@ -3,6 +3,9 @@
   "scripts": {
     "start": "node weather.js"
   },
+  "engines": {
+    "node": "16.11.1"
+  },
   "dependencies": {
     "@slack/web-api": "^6.4.0",
     "@slack/webhook": "^6.0.0",

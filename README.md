@@ -13,6 +13,7 @@ utc11:00pm = jtc8:00am
 git add .  
 git commit -m "fix"  
 git push heroku master
+git push origin main
 
 heroku logs --tail
 
