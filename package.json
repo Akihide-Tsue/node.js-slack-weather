@@ -1,8 +1,5 @@
 {
   "main": "weather.js",
-  "scripts": {
-    "start": "node weather.js"
-  },
   "engines": {
     "node": "16.11.1"
   },
