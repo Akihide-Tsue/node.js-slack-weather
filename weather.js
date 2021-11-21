@@ -20,7 +20,7 @@ const fs = require('fs');
 
     const targetElementSelector = '.table-weather01'
     await page.waitForSelector(targetElementSelector)
-    await setTimeout(10000)//10秒
+    await setTimeout(20000)//20秒
 
     const clip = await page.evaluate(s => {
       const el = document.querySelector(s)
