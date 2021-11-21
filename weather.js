@@ -50,8 +50,8 @@ const fs = require('fs');
     }).then(response => {
       // console.log(response);
 
-      const webhook = new IncomingWebhook(process.env.IQRA_HOOK_URL);//iqra
-      // const webhook = new IncomingWebhook(process.env.TSUE_HOOK_URL);//津江
+      // const webhook = new IncomingWebhook(process.env.IQRA_HOOK_URL);//iqra
+      const webhook = new IncomingWebhook(process.env.TSUE_HOOK_URL);//津江
       webhook.send({
         text: '',//必要
         username: "ウェザーニュース(大阪)", //通知のユーザー名
@@ -64,7 +64,6 @@ const fs = require('fs');
     }).catch(error => {
       console.log(error);
     });
-
     console.log('完了')
     await setTimeout(20000)//20秒
     browser.close();
