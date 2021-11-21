@@ -25,7 +25,3 @@ https://qiita.com/tamanugi/items/8cc1266265457f13b9ea
 
 ### URL化
 https://imagekit.io/use-cases/file-upload/
-
-### LINE
-
-https://liff.line.me/1645278921-kWRPP32q/?accountId=456qfgav
