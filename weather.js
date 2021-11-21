@@ -16,7 +16,7 @@ const fs = require('fs');
     });
     const page = await browser.newPage();
     await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3419.0 Safari/537.36');
-    // await setTimeout(2000)//2秒
+    await setTimeout(5000)//5秒
     await page.goto('https://weathernews.jp/s/forecast/detail.fcgi?area=Osaka', { waitUntil: "networkidle2" })
 
     const targetElementSelector = '.table-weather01'
@@ -33,7 +33,7 @@ const fs = require('fs');
 
     // スクリーンショットに位置と大きさを指定してclipする
     await page.screenshot({ clip, path: 'weather.png' })
-    await setTimeout(2000)//2秒
+    await setTimeout(5000)//5秒
 
     var imageFile = fs.readFileSync('./weather.png');
     var encoded = Buffer.from(imageFile).toString('base64');
