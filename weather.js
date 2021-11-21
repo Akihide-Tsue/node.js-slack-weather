@@ -8,13 +8,13 @@ const fs = require('fs');
 
 (async () => {
   try {
-    console.log('開始' )
+    console.log('開始')
     const browser = await puppeteer.launch({
       headless: true,
       args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--single-process']
     });
     const page = await browser.newPage();
-    await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3419.0 Safari/537.36');
+    await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36');
     await setTimeout(5000)//5秒
     await page.goto('https://weathernews.jp/s/forecast/detail.fcgi?area=Osaka', { waitUntil: "networkidle2" })
 
@@ -28,7 +28,7 @@ const fs = require('fs');
       const { width, height, top: y, left: x } = el.getBoundingClientRect()
       return { width: 246, height, x, y }
     }, targetElementSelector)
-    // console.log('clip', clip)
+    console.log('clip', clip)
 
     // スクリーンショットに位置と大きさを指定してclipする
     await page.screenshot({ clip, path: 'weather.png' })
