@@ -8,19 +8,19 @@ const fs = require('fs');
 
 (async () => {
   try {
-    console.log('開始')
+    console.log('開始', new Date())
     const browser = await puppeteer.launch({
       headless: true,
       args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--single-process']
     });
     const page = await browser.newPage();
     await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36');
-    await setTimeout(5000)//5秒
+    await setTimeout(10000)//10秒
     await page.goto('https://weathernews.jp/s/forecast/detail.fcgi?area=Osaka', { waitUntil: "networkidle2" })
 
     const targetElementSelector = '.table-weather01'
     await page.waitForSelector(targetElementSelector)
-    await setTimeout(20000)//20秒
+    await setTimeout(30000)//30秒
 
     const clip = await page.evaluate(s => {
       const el = document.querySelector(s)
@@ -62,13 +62,14 @@ const fs = require('fs');
       });
 
     }).catch(error => {
-      console.log('errorその１',error);
+      console.error('errorその１', error);
+      return
     });
     console.log('完了')
     await setTimeout(20000)//20秒
     browser.close();
-  }catch (error) {
-    console.log('errorその２', error)
+  } catch (error) {
+    console.error('errorその２', error)
     return
   }
 })();
